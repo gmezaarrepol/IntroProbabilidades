@@ -1,6 +1,6 @@
 --- 
-title: "YOUR TITLE HERE"
-author: "YOUR NAME HERE"
+title: "Introduccion a Probabilidades"
+author: "Joseph K. Blitzstein (Autor), Jessica Hwang (Autor), Gonzalo Meza (Traduccion)"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---

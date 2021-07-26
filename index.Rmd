@@ -5,5 +5,15 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
 
-# Down the rabbit-hole
+# Prefacio
+
+Este libro proporciona una introducción moderna a la probabilidad y desarrolla una base para comprender la estadística, la aleatoriedad y la incertidumbre. Se exploran una variedad de aplicaciones y ejemplos, desde el lanzamiento de monedas básico y el estudio de coincidencias hasta el PageRank de Google y la cadena de Markov Monte Carlo. Como a menudo se considera que la probabilidad es un tema contrario a la intuición, se ofrecen muchas explicaciones intuitivas, diagramas y problemas de práctica. Cada capítulo termina con una sección que muestra cómo explorar las ideas de ese capítulo en R, un entorno de software libre para cálculos estadísticos y simulaciones.
+
+Los videos de conferencias de Stat 110 en Harvard, el curso que dio origen a este libro, están disponibles gratuitamente en http://stat110.net. En este sitio también se encuentran disponibles materiales complementarios adicionales, como código R, animaciones y soluciones a los ejercicios marcados con (S).
+
+El cálculo es un requisito previo para este libro; no hay ningún requisito previo de estadísticas. El principal desafío matemático no radica en realizar derivaciones técnicas de cálculo, sino en traducir entre conceptos abstractos y ejemplos concretos. Algunos temas y características principales se enumeran a continuación:
+
+1. Historias. A lo largo de este libro, las definiciones, teoremas y pruebas se presentan a través de historias: interpretaciones del mundo real que preservan la precisión y la generalidad matemáticas. Exploramos distribuciones de probabilidad utilizando historias generativas que las hacen ampliamente utilizadas en modelos estadísticos. Cuando es posible, nos abstenemos de derivaciones tediosas y, en cambio, nuestro objetivo es dar interpretaciones e intuiciones de por qué los resultados clave son ciertos. Nuestra experiencia es que este enfoque promueve la retención a largo plazo del material al proporcionar información en lugar de exigir la memorización de memoria.
+
+2. Imágenes. Dado que las imágenes son historias de mil palabras, complementamos las definiciones con ilustraciones para que los conceptos clave se asocien con diagramas memorables. En muchos campos, la diferencia entre un novato y un experto se ha descrito de la siguiente manera: el novato lucha por memorizar una gran cantidad de hechos y fórmulas aparentemente desconectados, mientras que el experto ve una estructura unificada en la que unos pocos principios e ideas conectan estos hechos. coherentemente. Para ayudar a los estudiantes a ver la estructura de la probabilidad, enfatizamos las conexiones entre ideas (tanto verbal como visualmente), y al final de la mayoría de los capítulos presentamos mapas de conceptos y distribuciones recurrentes y en constante expansión.
 

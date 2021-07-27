@@ -61,4 +61,6 @@ La teoría de conjuntos es muy útil en probabilidad, ya que proporciona un leng
 Por ejemplo, sea $S$ el espacio muestral de un experimento y sean $A, B \subseteq S$ eventos. Entonces la unión $A \cup B$ es el evento que ocurre si y solo si ocurre al menos uno de $A, B$, la intersección $A \cap B$ es el evento que ocurre si y solo si ocurren $A y B$, y el complemento $A^c$ es el evento que ocurre si y solo si $A$ no ocurre. También tenemos las leyes de De Morgan:
 
 $$ (A \cup B)^c = A^c \cap B^c \: and \: (A \cap B)^c = A^c \cup B^c $$
-ya que decir que no es el caso de que al menos uno de A y B ocurra es lo mismo que decir que A no ocurre y B no ocurre, y decir que no es el caso de que ocurran ambos es lo mismo que decir que al menos uno no ocurre. Resultados análogos son válidos para uniones e intersecciones de más de dos eventos.
+ya que decir que no es el caso de que al menos uno de $A$ y $B$ ocurra es lo mismo que decir que $A$ no ocurre y $B$ no ocurre, y decir que no es el caso de que ocurran ambos es lo mismo que decir que al menos uno no ocurre. Resultados análogos son válidos para uniones e intersecciones de más de dos eventos.
+
+

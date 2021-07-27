@@ -24,7 +24,7 @@
 <meta name="author" content="Joseph K. Blitzstein (Autor), Jessica Hwang (Autor), Gonzalo Meza (Traduccion)" />
 
 
-<meta name="date" content="2021-07-26" />
+<meta name="date" content="2021-07-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -137,10 +137,17 @@ Probablemente hayas escuchado estas palabras innumerables veces, pero es probabl
 <div class="figure" style="text-align: center">
 <img src="images/1_1.png" alt="Un espacio muestral como Pebble World, con dos eventos A y B destacados" width="50%" />
 <p class="caption">
-(#fig:f1_1)Un espacio muestral como Pebble World, con dos eventos A y B destacados
+(#fig:1_1)Un espacio muestral como Pebble World, con dos eventos A y B destacados
 </p>
 </div>
-<p>El espacio muestral de un experimento puede ser finito, infinito numerable o infinito incontable (consulte la Sección A.1.5 del apéndice matemático para obtener una explicación de los conjuntos contables e incontables). Cuando el espacio muestral es finito, podemos visualizarlo como Pebble World, como se muestra en la Figura 1.1. Cada pebble representa un resultado y un evento es un conjunto de pebbles. @ref(fig:f1_1)</p>
+<p>El espacio muestral de un experimento puede ser finito, infinito numerable o infinito incontable (consulte la Sección A.1.5 del apéndice matemático para obtener una explicación de los conjuntos contables e incontables). Cuando el espacio muestral es finito, podemos visualizarlo como Pebble World, como se muestra en la Figura 1.1. Cada pebble representa un resultado y un evento es un conjunto de pebbles.</p>
+<p>Realizar el experimento equivale a seleccionar al azar un pebble. Si todos los pebbles tienen la misma masa, es igualmente probable que se elijan todos los pebbles. Este caso especial es el tema de las próximas dos secciones. En la sección 1.6, damos una definición general de probabilidad que permite que los pebbles difieran en masa.</p>
+<p>La teoría de conjuntos es muy útil en probabilidad, ya que proporciona un lenguaje rico para expresar y trabajar con eventos; La sección A.1 del apéndice de matemáticas proporciona una revisión de la teoría de conjuntos. Las operaciones de conjunto, especialmente uniones, intersecciones y complementos, facilitan la construcción de nuevos eventos en términos de eventos ya definidos. Estos conceptos también nos permiten expresar un evento de más de una forma; A menudo, es mucho más fácil trabajar con una expresión para un evento que con otra expresión para el mismo evento.</p>
+<p>Por ejemplo, sea <span class="math inline">\(S\)</span> el espacio muestral de un experimento y sean <span class="math inline">\(A, B \subseteq S\)</span> eventos. Entonces la unión <span class="math inline">\(A \cup B\)</span> es el evento que ocurre si y solo si ocurre al menos uno de <span class="math inline">\(A, B\)</span>, la intersección <span class="math inline">\(A \cap B\)</span> es el evento que ocurre si y solo si ocurren <span class="math inline">\(A y B\)</span>, y el complemento <span class="math inline">\(A^c\)</span> es el evento que ocurre si y solo si <span class="math inline">\(A\)</span> no ocurre. También tenemos las leyes de De Morgan:</p>
+<p><span class="math display">\[ (A \cup B)^c = A^c \cap B^c \: and \: (A \cap B)^c = A^c \cup B^c \]</span>
+ya que decir que no es el caso de que al menos uno de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> ocurra es lo mismo que decir que <span class="math inline">\(A\)</span> no ocurre y <span class="math inline">\(B\)</span> no ocurre, y decir que no es el caso de que ocurran ambos es lo mismo que decir que al menos uno no ocurre. Resultados análogos son válidos para uniones e intersecciones de más de dos eventos.</p>
+<p>En el ejemplo que se muestra en la Figura 1.1, A es un conjunto de 5 pebbles, B es un juego de 4 pebbles, <span class="math inline">\(A \cup B\)</span> consta de los 8 pebbles en <span class="math inline">\(A \: o \: B\)</span> (incluido el pebble que está en ambos), <span class="math inline">\(A \cap B\)</span> del pebble que está tanto en <span class="math inline">\(A\)</span> como en <span class="math inline">\(B\)</span>, y <span class="math inline">\(A^c\)</span> consta de los 4 gpebbles que no están en <span class="math inline">\(A\)</span>.</p>
+<p>La noción de espacio muestral es muy general y abstracta, por lo que es importante tener en mente algunos ejemplos concretos.</p>
 
 </div>
 </div>
@@ -201,6 +208,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

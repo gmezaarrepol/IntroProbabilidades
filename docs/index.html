@@ -24,7 +24,7 @@
 <meta name="author" content="Joseph K. Blitzstein (Autor), Jessica Hwang (Autor), Gonzalo Meza (Traduccion)" />
 
 
-<meta name="date" content="2021-07-25" />
+<meta name="date" content="2021-07-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 
-<link rel="next" href="the-pool-of-tears.html"/>
+<link rel="next" href="probabilidad-y-conteo.html"/>
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -73,7 +73,12 @@
 <li><a href="./">Introduccion a Probabilidades</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prefacio</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefacio</a></li>
+<li class="chapter" data-level="1" data-path="probabilidad-y-conteo.html"><a href="probabilidad-y-conteo.html"><i class="fa fa-check"></i><b>1</b> Probabilidad y Conteo</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="probabilidad-y-conteo.html"><a href="probabilidad-y-conteo.html#por-qué-estudiar-probabilidad"><i class="fa fa-check"></i><b>1.1</b> ¿Por qué estudiar probabilidad?</a></li>
+<li class="chapter" data-level="1.2" data-path="probabilidad-y-conteo.html"><a href="probabilidad-y-conteo.html#espacios-de-muestra-y-pebble-world"><i class="fa fa-check"></i><b>1.2</b> Espacios de muestra y Pebble World</a></li>
+</ul></li>
 <li class="chapter" data-level="2" data-path="the-pool-of-tears.html"><a href="the-pool-of-tears.html"><i class="fa fa-check"></i><b>2</b> The pool of tears</a></li>
 <li class="chapter" data-level="3" data-path="a-caucus-race-and-a-long-tale.html"><a href="a-caucus-race-and-a-long-tale.html"><i class="fa fa-check"></i><b>3</b> A caucus-race and a long tale</a></li>
 <li class="divider"></li>
@@ -98,20 +103,18 @@
 <div id="header">
 <h1 class="title">Introduccion a Probabilidades</h1>
 <p class="author"><em>Joseph K. Blitzstein (Autor), Jessica Hwang (Autor), Gonzalo Meza (Traduccion)</em></p>
-<p class="date" style="margin-top: 1.5em;"><em>2021-07-25</em></p>
+<p class="date" style="margin-top: 1.5em;"><em>2021-07-26</em></p>
 </div>
-<div id="prefacio" class="section level1" number="1">
-<h1><span class="header-section-number">Chapter 1</span> Prefacio</h1>
+<div id="prefacio" class="section level1 unnumbered">
+<h1>Prefacio</h1>
 <p>Este libro proporciona una introducción moderna a la probabilidad y desarrolla una base para comprender la estadística, la aleatoriedad y la incertidumbre. Se exploran una variedad de aplicaciones y ejemplos, desde el lanzamiento de monedas básico y el estudio de coincidencias hasta el PageRank de Google y la cadena de Markov Monte Carlo. Como a menudo se considera que la probabilidad es un tema contrario a la intuición, se ofrecen muchas explicaciones intuitivas, diagramas y problemas de práctica. Cada capítulo termina con una sección que muestra cómo explorar las ideas de ese capítulo en R, un entorno de software libre para cálculos estadísticos y simulaciones.</p>
 <p>Los videos de conferencias de Stat 110 en Harvard, el curso que dio origen a este libro, están disponibles gratuitamente en <a href="http://stat110.net" class="uri">http://stat110.net</a>. En este sitio también se encuentran disponibles materiales complementarios adicionales, como código R, animaciones y soluciones a los ejercicios marcados con (S).</p>
 <p>El cálculo es un requisito previo para este libro; no hay ningún requisito previo de estadísticas. El principal desafío matemático no radica en realizar derivaciones técnicas de cálculo, sino en traducir entre conceptos abstractos y ejemplos concretos. Algunos temas y características principales se enumeran a continuación:</p>
 <ol style="list-style-type: decimal">
 <li><p>Historias. A lo largo de este libro, las definiciones, teoremas y pruebas se presentan a través de historias: interpretaciones del mundo real que preservan la precisión y la generalidad matemáticas. Exploramos distribuciones de probabilidad utilizando historias generativas que las hacen ampliamente utilizadas en modelos estadísticos. Cuando es posible, nos abstenemos de derivaciones tediosas y, en cambio, nuestro objetivo es dar interpretaciones e intuiciones de por qué los resultados clave son ciertos. Nuestra experiencia es que este enfoque promueve la retención a largo plazo del material al proporcionar información en lugar de exigir la memorización de memoria.</p></li>
 <li><p>Imágenes. Dado que una imagen vale mas que mil palabras, complementamos las definiciones con ilustraciones para que los conceptos clave se asocien con diagramas memorables. En muchos campos, la diferencia entre un novato y un experto se ha descrito de la siguiente manera: el novato lucha por memorizar una gran cantidad de hechos y fórmulas aparentemente desconectados, mientras que el experto ve una estructura unificada en la que unos pocos principios e ideas conectan estos hechos. coherentemente. Para ayudar a los estudiantes a ver la estructura de la probabilidad, enfatizamos las conexiones entre ideas (tanto verbal como visualmente), y al final de la mayoría de los capítulos presentamos mapas de conceptos y distribuciones recurrentes y en constante expansión.</p></li>
-<li><p>Enseñanza dual de conceptos y estrategias. Nuestra intención es que al leer este libro, los estudiantes aprendan no solo los conceptos de probabilidad, sino también un conjunto de estrategias de resolución de problemas que son ampliamente aplicables fuera de la probabilidad. En los ejemplos trabajados, explicamos cada paso de la solución pero también comentamos cómo supimos tomar el enfoque que hicimos. A menudo presentamos múltiples soluciones al mismo problema.</p></li>
-</ol>
-<p>Identificamos y nombramos explícitamente estrategias importantes como la simetría y el reconocimiento de patrones, y disipamos de manera proactiva los malentendidos comunes, que están marcados con el símbolo (X).</p>
-<ol start="4" style="list-style-type: decimal">
+<li><p>Enseñanza dual de conceptos y estrategias. Nuestra intención es que al leer este libro, los estudiantes aprendan no solo los conceptos de probabilidad, sino también un conjunto de estrategias de resolución de problemas que son ampliamente aplicables fuera de la probabilidad. En los ejemplos trabajados, explicamos cada paso de la solución pero también comentamos cómo supimos tomar el enfoque que hicimos. A menudo presentamos múltiples soluciones al mismo problema.
+Identificamos y nombramos explícitamente estrategias importantes como la simetría y el reconocimiento de patrones, y disipamos de manera proactiva los malentendidos comunes, que están marcados con el símbolo (X).</p></li>
 <li><p>Problemas de práctica. El libro contiene alrededor de 600 ejercicios de diversa dificultad. Los ejercicios están destinados a reforzar la comprensión del material y fortalecer las habilidades de resolución de problemas en lugar de requerir cálculos repetitivos. Algunos son problemas de práctica estratégica, agrupados por tema para facilitar la práctica de un tema en particular, mientras que otros son de práctica mixta, en los que puede ser necesario sintetizar varios temas anteriores. Aproximadamente 250 ejercicios tienen soluciones en línea detalladas para la práctica y el autoaprendizaje.</p></li>
 <li><p>Simulación, Monte Carlo y R. Muchos problemas de probabilidad son demasiado difíciles de resolver con exactitud y, en cualquier caso, es importante poder comprobar la respuesta. Introducimos técnicas para explorar la probabilidad a través de la simulación y mostramos que a menudo unas pocas líneas de código R son suficientes para crear una simulación de un problema aparentemente complicado.</p></li>
 <li><p>Concéntrese en la relevancia del mundo real y el pensamiento estadístico. Los ejemplos y ejercicios de este libro tienen una clara motivación en el mundo real, con un enfoque particular en la construcción de una base sólida para el estudio adicional de la inferencia estadística y el modelado. Prevemos ideas estadísticas importantes como muestreo, simulación, inferencia bayesiana y la cadena de Markov Monte Carlo; otras áreas de aplicación incluyen genética, medicina, informática y teoría de la información. Nuestra selección de ejemplos y ejercicios tiene como objetivo resaltar el poder, la aplicabilidad y la belleza del pensamiento probabilístico.</p></li>
@@ -126,7 +129,7 @@
         </div>
       </div>
 
-<a href="the-pool-of-tears.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="probabilidad-y-conteo.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -4,5 +4,21 @@ delete_merged_file: true
 edit: https://github.com//gmezaarrepol/IntroProbabilidades/edit/master/%s
 view: https://github.com//gmezaarrepol/IntroProbabilidades/blob/master/%s
 language:
+  label:
+    fig: 'FIGURA '
+    tab: 'Table '
+    eq: 'Equation '
+    thm: 'TEOREMA'
+    lem: 'Lemma '
+    cor: 'Corollary '
+    prp: 'Proposition '
+    cnj: 'Conjecture '
+    def: 'DEFINICIÓN '
+    exm: 'Example '
+    exr: 'Exercise '
+    hyp: 'Hypothesis '
+    proof: 'Proof. '
+    remark: 'Remark. '
+    solution: 'Solution. '
   ui:
-    chapter_name: "Chapter "
+    chapter_name: "Capítulo "

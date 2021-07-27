@@ -5,7 +5,7 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
 
-# Prefacio
+# Prefacio {-}
 
 Este libro proporciona una introducción moderna a la probabilidad y desarrolla una base para comprender la estadística, la aleatoriedad y la incertidumbre. Se exploran una variedad de aplicaciones y ejemplos, desde el lanzamiento de monedas básico y el estudio de coincidencias hasta el PageRank de Google y la cadena de Markov Monte Carlo. Como a menudo se considera que la probabilidad es un tema contrario a la intuición, se ofrecen muchas explicaciones intuitivas, diagramas y problemas de práctica. Cada capítulo termina con una sección que muestra cómo explorar las ideas de ese capítulo en R, un entorno de software libre para cálculos estadísticos y simulaciones.
 
@@ -18,7 +18,6 @@ El cálculo es un requisito previo para este libro; no hay ningún requisito pre
 2. Imágenes. Dado que una imagen vale mas que mil palabras, complementamos las definiciones con ilustraciones para que los conceptos clave se asocien con diagramas memorables. En muchos campos, la diferencia entre un novato y un experto se ha descrito de la siguiente manera: el novato lucha por memorizar una gran cantidad de hechos y fórmulas aparentemente desconectados, mientras que el experto ve una estructura unificada en la que unos pocos principios e ideas conectan estos hechos. coherentemente. Para ayudar a los estudiantes a ver la estructura de la probabilidad, enfatizamos las conexiones entre ideas (tanto verbal como visualmente), y al final de la mayoría de los capítulos presentamos mapas de conceptos y distribuciones recurrentes y en constante expansión.
 
 3. Enseñanza dual de conceptos y estrategias. Nuestra intención es que al leer este libro, los estudiantes aprendan no solo los conceptos de probabilidad, sino también un conjunto de estrategias de resolución de problemas que son ampliamente aplicables fuera de la probabilidad. En los ejemplos trabajados, explicamos cada paso de la solución pero también comentamos cómo supimos tomar el enfoque que hicimos. A menudo presentamos múltiples soluciones al mismo problema.
-
 Identificamos y nombramos explícitamente estrategias importantes como la simetría y el reconocimiento de patrones, y disipamos de manera proactiva los malentendidos comunes, que están marcados con el símbolo (X).
 
 4. Problemas de práctica. El libro contiene alrededor de 600 ejercicios de diversa dificultad. Los ejercicios están destinados a reforzar la comprensión del material y fortalecer las habilidades de resolución de problemas en lugar de requerir cálculos repetitivos. Algunos son problemas de práctica estratégica, agrupados por tema para facilitar la práctica de un tema en particular, mientras que otros son de práctica mixta, en los que puede ser necesario sintetizar varios temas anteriores. Aproximadamente 250 ejercicios tienen soluciones en línea detalladas para la práctica y el autoaprendizaje.

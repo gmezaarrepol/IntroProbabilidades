@@ -1,3 +1,6 @@
-prefacio
+def:pyth
+probabilidad-y-conteo
+por-qué-estudiar-probabilidad
+espacios-de-muestra-y-pebble-world
 the-pool-of-tears
 a-caucus-race-and-a-long-tale

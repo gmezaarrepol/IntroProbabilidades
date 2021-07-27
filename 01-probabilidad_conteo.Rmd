@@ -63,4 +63,5 @@ Por ejemplo, sea $S$ el espacio muestral de un experimento y sean $A, B \subsete
 $$ (A \cup B)^c = A^c \cap B^c \: and \: (A \cap B)^c = A^c \cup B^c $$
 ya que decir que no es el caso de que al menos uno de $A$ y $B$ ocurra es lo mismo que decir que $A$ no ocurre y $B$ no ocurre, y decir que no es el caso de que ocurran ambos es lo mismo que decir que al menos uno no ocurre. Resultados análogos son válidos para uniones e intersecciones de más de dos eventos.
 
+La segunda ley establece que el complemento de la intersección de dos conjuntos es la unión de sus complementos:
 

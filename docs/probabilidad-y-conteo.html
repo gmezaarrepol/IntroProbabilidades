@@ -21,10 +21,12 @@
   
   
 
-<meta name="author" content="Joseph K. Blitzstein (Autor), Jessica Hwang (Autor), Gonzalo Meza (Traduccion)" />
+<meta name="author" content="Joseph K. Blitzstein (Autor)" />
+<meta name="author" content="Jessica Hwang (Autor)" />
+<meta name="author" content="Gonzalo Meza (Traduccion no autorizado)" />
 
 
-<meta name="date" content="2021-07-27" />
+<meta name="date" content="2021-08-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -78,6 +80,11 @@
 <ul>
 <li class="chapter" data-level="1.1" data-path="probabilidad-y-conteo.html"><a href="probabilidad-y-conteo.html#por-qué-estudiar-probabilidad"><i class="fa fa-check"></i><b>1.1</b> ¿Por qué estudiar probabilidad?</a></li>
 <li class="chapter" data-level="1.2" data-path="probabilidad-y-conteo.html"><a href="probabilidad-y-conteo.html#espacios-de-muestra-y-pebble-world"><i class="fa fa-check"></i><b>1.2</b> Espacios de muestra y Pebble World</a></li>
+<li class="chapter" data-level="1.3" data-path="probabilidad-y-conteo.html"><a href="probabilidad-y-conteo.html#definición-ingenua-de-probabilidad"><i class="fa fa-check"></i><b>1.3</b> Definición ingenua de probabilidad</a></li>
+<li class="chapter" data-level="1.4" data-path="probabilidad-y-conteo.html"><a href="probabilidad-y-conteo.html#como-contar"><i class="fa fa-check"></i><b>1.4</b> Como contar</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="probabilidad-y-conteo.html"><a href="probabilidad-y-conteo.html#regla-de-multiplicacion"><i class="fa fa-check"></i><b>1.4.1</b> Regla de multiplicacion</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="the-pool-of-tears.html"><a href="the-pool-of-tears.html"><i class="fa fa-check"></i><b>2</b> The pool of tears</a></li>
 <li class="chapter" data-level="3" data-path="a-caucus-race-and-a-long-tale.html"><a href="a-caucus-race-and-a-long-tale.html"><i class="fa fa-check"></i><b>3</b> A caucus-race and a long tale</a></li>
@@ -132,12 +139,12 @@ Probablemente hayas escuchado estas palabras innumerables veces, pero es probabl
 <h2><span class="header-section-number">1.2</span> Espacios de muestra y Pebble World</h2>
 <p>El marco matemático para la probabilidad se basa en conjuntos. Imagine que se realiza un experimento, lo que da como resultado uno de un conjunto de posibles resultados. Antes de realizar el experimento, se desconoce qué resultado será el resultado; después, el resultado “cristaliza” en el resultado real.</p>
 <div class="definition">
-<p><span id="def:pyth" class="definition"><strong>DEFINICIÓN 1.1  (Espacio muestral y evento) </strong></span>El espacio muestral S de un experimento es el conjunto de todos los posibles resultados del experimento. Un evento A es un subconjunto del espacio muestral S, y decimos que A ocurrió si el resultado real está en A.</p>
+<p><span id="def:espacioM" class="definition"><strong>DEFINICIÓN 1.1  (Espacio muestral y evento) </strong></span>El espacio muestral S de un experimento es el conjunto de todos los posibles resultados del experimento. Un evento A es un subconjunto del espacio muestral S, y decimos que A ocurrió si el resultado real está en A.</p>
 </div>
-<div class="figure" style="text-align: center">
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
 <img src="images/1_1.png" alt="Un espacio muestral como Pebble World, con dos eventos A y B destacados" width="50%" />
 <p class="caption">
-(#fig:1_1)Un espacio muestral como Pebble World, con dos eventos A y B destacados
+FIGURA 1.1: Un espacio muestral como Pebble World, con dos eventos A y B destacados
 </p>
 </div>
 <p>El espacio muestral de un experimento puede ser finito, infinito numerable o infinito incontable (consulte la Sección A.1.5 del apéndice matemático para obtener una explicación de los conjuntos contables e incontables). Cuando el espacio muestral es finito, podemos visualizarlo como Pebble World, como se muestra en la Figura 1.1. Cada pebble representa un resultado y un evento es un conjunto de pebbles.</p>
@@ -145,11 +152,195 @@ Probablemente hayas escuchado estas palabras innumerables veces, pero es probabl
 <p>La teoría de conjuntos es muy útil en probabilidad, ya que proporciona un lenguaje rico para expresar y trabajar con eventos; La sección A.1 del apéndice de matemáticas proporciona una revisión de la teoría de conjuntos. Las operaciones de conjunto, especialmente uniones, intersecciones y complementos, facilitan la construcción de nuevos eventos en términos de eventos ya definidos. Estos conceptos también nos permiten expresar un evento de más de una forma; A menudo, es mucho más fácil trabajar con una expresión para un evento que con otra expresión para el mismo evento.</p>
 <p>Por ejemplo, sea <span class="math inline">\(S\)</span> el espacio muestral de un experimento y sean <span class="math inline">\(A, B \subseteq S\)</span> eventos. Entonces la unión <span class="math inline">\(A \cup B\)</span> es el evento que ocurre si y solo si ocurre al menos uno de <span class="math inline">\(A, B\)</span>, la intersección <span class="math inline">\(A \cap B\)</span> es el evento que ocurre si y solo si ocurren <span class="math inline">\(A y B\)</span>, y el complemento <span class="math inline">\(A^c\)</span> es el evento que ocurre si y solo si <span class="math inline">\(A\)</span> no ocurre. También tenemos las leyes de De Morgan:</p>
 <p><span class="math display">\[ (A \cup B)^c = A^c \cap B^c \: and \: (A \cap B)^c = A^c \cup B^c \]</span>
-ya que decir que no es el caso de que al menos uno de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> ocurra es lo mismo que decir que <span class="math inline">\(A\)</span> no ocurre y <span class="math inline">\(B\)</span> no ocurre, y decir que no es el caso de que ocurran ambos es lo mismo que decir que al menos uno no ocurre. Resultados análogos son válidos para uniones e intersecciones de más de dos eventos.</p>
+ya que decir que de que al menos <span class="math inline">\(A\)</span> o <span class="math inline">\(B\)</span> no ocurra, es lo mismo que decir que <span class="math inline">\(A\)</span> no ocurre y <span class="math inline">\(B\)</span> no ocurre; y decir que en caso de que no ocurran ambos es lo mismo que decir que al menos uno no ocurre. Resultados análogos son válidos para uniones e intersecciones de más de dos eventos.</p>
 <p>En el ejemplo que se muestra en la Figura 1.1, A es un conjunto de 5 pebbles, B es un juego de 4 pebbles, <span class="math inline">\(A \cup B\)</span> consta de los 8 pebbles en <span class="math inline">\(A \: o \: B\)</span> (incluido el pebble que está en ambos), <span class="math inline">\(A \cap B\)</span> del pebble que está tanto en <span class="math inline">\(A\)</span> como en <span class="math inline">\(B\)</span>, y <span class="math inline">\(A^c\)</span> consta de los 4 gpebbles que no están en <span class="math inline">\(A\)</span>.</p>
 <p>La noción de espacio muestral es muy general y abstracta, por lo que es importante tener en mente algunos ejemplos concretos.</p>
+<div class="example">
+<p><span id="exm:coin" class="example"><strong>EJEMPLO 1.1  (Lanzamiento de moneda) </strong></span>Se lanza una moneda <span class="math inline">\(10\)</span> veces. Escribiendo Caras como <span class="math inline">\(H\)</span> y Sellos como <span class="math inline">\(T\)</span>, un resultado posible (pebbles) es <span class="math inline">\(HHHTHHTTHT\)</span>, y el espacio muestral es el conjunto de todas las cadenas posibles de longitud <span class="math inline">\(10\)</span> de <span class="math inline">\(H\)</span> y <span class="math inline">\(T\)</span>. Podemos (y codificaremos) <span class="math inline">\(H\)</span> como <span class="math inline">\(1\)</span> y <span class="math inline">\(T\)</span> como <span class="math inline">\(0\)</span>, de modo que un resultado sea una secuencia <span class="math inline">\((s1, ..., s10)\)</span> con <span class="math inline">\(s_j \in \{0,1\}\)</span>, y el espacio muestral es el conjunto de todos esos secuencias. Ahora veamos algunos eventos:</p>
+</div>
+<ol style="list-style-type: decimal">
+<li>Sea <span class="math inline">\(A_1\)</span> el evento de que el primer lanzamiento sea Cara. Como conjunto,</li>
+</ol>
+<p><span class="math display">\[ A_1 = \{(1, s_2,...,s_{10}) : s_j \in \{0,1\} \:\:for \: \:2 \leqslant j \leqslant 10\}.\]</span>
+Este es un subconjunto del espacio muestral, por lo que de hecho es un evento; decir que ocurre <span class="math inline">\(A_1\)</span> es lo mismo que decir que el primer lanzamiento es Cara. De manera similar, sea <span class="math inline">\(A_j\)</span> el evento de que el <span class="math inline">\(j-ésimo\)</span> giro sea Cara para <span class="math inline">\(j = 2,3, ..., 10\)</span>.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Sea <span class="math inline">\(B\)</span> el evento de que al menos una de las vueltas fuera Cara. Como conjunto,</li>
+</ol>
+<p><span class="math display">\[ B = \bigcup_{j=1}^{10}A_{j} \]</span>
+3. Sea <span class="math inline">\(C\)</span> el evento de que todas las volteretas fueran caras. Como conjunto,</p>
+<p><span class="math display">\[ C = \bigcap_{j=1}^{10}A_{j} \]</span>
+4. Sea <span class="math inline">\(D\)</span> el evento de que hubo al menos dos Cabezas consecutivas. Como conjunto,</p>
+<p><span class="math display">\[ D = \bigcup_{j=1}^{9}(A_{j} \cap A_{j+1})  \]</span></p>
+<div class="example">
+<p><span id="exm:card" class="example"><strong>EJEMPLO 1.2  (Escoge una carta, cualquiera) </strong></span>Elija una carta de una baraja estándar de 52 cartas. El espacio muestral S es el conjunto de las 52 cartas (por lo que hay 52 pebbles, una para cada carta). Considere los siguientes cuatro eventos:</p>
+</div>
+<ul>
+<li><span class="math inline">\(A\)</span>: la carta es un as.</li>
+<li><span class="math inline">\(B\)</span>: la carta tiene un color negro.</li>
+<li><span class="math inline">\(D\)</span>: la carta es un diamante.</li>
+<li><span class="math inline">\(H\)</span>: la carta es un corazón.</li>
+</ul>
+<p>Como conjunto, <span class="math inline">\(H\)</span> consta de 13 cartas:</p>
+<p><span class="math display">\[ \{ As \:de \:corazon, Dos \:de \:corazon,..., Rey \:de \:corazon \} \]</span></p>
+<p>Podemos crear varios otros eventos en términos de los eventos <span class="math inline">\(A, B, D \: y \:H\)</span>. Las uniones, intersecciones y complementos son especialmente útiles para esto. Por ejemplo:
+* <span class="math inline">\(A\cap H\)</span> es el evento de que la carta sea el As de corazones.
+* <span class="math inline">\(A \cap B\)</span> es el evento {As de picas, As de tréboles}.
+* <span class="math inline">\(A \cup D \cup H\)</span> es el evento de que la carta sea roja o un as.
+* <span class="math inline">\((A \cup B)^c = A^c \cap B^c\)</span> es el evento en el que la tarjeta no es un as.</p>
+<p>Además, tenga en cuenta que <span class="math inline">\((D \cup H)^c = D^c \cap H^c = B\)</span>, por lo que <span class="math inline">\(B\)</span> se puede expresar en términos de <span class="math inline">\(D\)</span> y <span class="math inline">\(H\)</span>. Por otro lado, el evento de que la carta sea de picas no se puede escribir en términos de $A,:B, :D, : H $ ya que ninguno de ellos es lo suficientemente detallado como para poder distinguir entre picas y tréboles.</p>
+<p>Hay muchos otros eventos que podrían definirse utilizando este espacio de muestra. De hecho, los métodos de conteo que se presentan más adelante en este capítulo muestran que hay <span class="math inline">\(252 ≈ 4.5 × 1015\)</span> eventos en este problema, aunque solo hay 52 pebbles.
+¿Y si la carta extraída fuera un comodín? Eso indicaría que teníamos el espacio muestral incorrecto; estamos asumiendo que se garantiza que el resultado del experimento es un elemento de S.</p>
+<p>Como demuestran los ejemplos anteriores, los eventos se pueden describir en español o en notación de conjuntos. A veces, la descripción en español es más fácil de interpretar mientras que la notación de conjuntos es más fácil de manipular. Sea S un espacio muestral y <span class="math inline">\(s_{actual}\)</span> el resultado real del experimento (el pebble que termina siendo elegido cuando se realiza el experimento). En la página siguiente se proporciona un mini-diccionario para convertir entre español y conjuntos.</p>
+<table>
+<colgroup>
+<col width="36%" />
+<col width="63%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Español</th>
+<th align="center">Conjuntos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(Eventos \: y \: ocurrencias\)</span></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td>espacio muestral</td>
+<td align="center"><span class="math inline">\(S\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(s\)</span> es un resultado posible</td>
+<td align="center"><span class="math inline">\(s \in S\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A\)</span> es un evento</td>
+<td align="center"><span class="math inline">\(A \subseteq S\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A\)</span> Ocurrió</td>
+<td align="center"><span class="math inline">\(s_{actual} \in A\)</span></td>
+</tr>
+<tr class="even">
+<td>algo debe pasar</td>
+<td align="center"><span class="math inline">\(s_{actual} \in S\)</span></td>
+</tr>
+<tr class="odd">
+<td>—</td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(Nuevos \: eventos \: de \: eventos \: antiguos\)</span></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A\)</span> o <span class="math inline">\(B\)</span> (inclusive)</td>
+<td align="center"><span class="math inline">\(A \cup B\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span></td>
+<td align="center"><span class="math inline">\(A \cap B\)</span></td>
+</tr>
+<tr class="odd">
+<td>No <span class="math inline">\(A\)</span></td>
+<td align="center"><span class="math inline">\(A^c\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A\)</span> o <span class="math inline">\(B\)</span>, pero no ambos</td>
+<td align="center"><span class="math inline">\((A \cap B^c) \cup (A^c \cap B)\)</span></td>
+</tr>
+<tr class="odd">
+<td>al menos uno de <span class="math inline">\(A1, ..., An\)</span></td>
+<td align="center"><span class="math inline">\(A_1 \cup ... \cup A_n\)</span></td>
+</tr>
+<tr class="even">
+<td>todos los de <span class="math inline">\(A1, ..., An\)</span></td>
+<td align="center"><span class="math inline">\(A_1 \cap ... \cap A_n\)</span></td>
+</tr>
+<tr class="odd">
+<td>***</td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(Relaciones \: entre \: eventos\)</span></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A\)</span> implica <span class="math inline">\(B\)</span></td>
+<td align="center"><span class="math inline">\(A \subseteq B\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son mutuamente excluyentes</td>
+<td align="center"><span class="math inline">\(A \cap B = 0\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A_1,...,A_n\)</span> son una particion de <span class="math inline">\(S\)</span></td>
+<td align="center"><span class="math inline">\(A_1 \cup ... \cup A_n = S, A_i \cap A_j = 0 \:para \:i \ne j\)</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+<div id="definición-ingenua-de-probabilidad" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Definición ingenua de probabilidad</h2>
+<p>Históricamente, la primera definición de la probabilidad de un evento era contar el número de formas en que el evento podría suceder y dividir por el número total de posibles resultados del experimento. A esto lo llamamos la definición ingenua, ya que es restrictiva y se basa en supuestos sólidos; sin embargo, es importante comprenderlo y es útil cuando no se utiliza incorrectamente.</p>
+<div class="definition">
+<p><span id="def:naiveProb" class="definition"><strong>DEFINICIÓN 1.2  (Definicion ingenua de probabilidad) </strong></span>Sea A unn evento para un experimento con un espacio muestral finito S. La probabilidad ingenua de A es</p>
+</div>
+<p><span class="math display">\[ P_{naive}(A) = \frac{|A|}{|S|} = \frac{numero \: de \: resultados  \: favorables \: de \: A}{numero \: total \:de \: resultados \: en \: S}\]</span>
+(Usamos <span class="math inline">\(|A|\)</span> para denotar el tamaño de <span class="math inline">\(A\)</span>; ver la seccion A.1.5 del apendice)</p>
+<p>En termino de Pebble World, la definicion ingenua solo dice que la probabilidad de <span class="math inline">\(A\)</span> es la fraccion de pebbles que estan en <span class="math inline">\(A\)</span>. Por ejemplo en la Figura 1.1 dice:</p>
+<p><span class="math display">\[ P_{naive}(A) = \frac{5}{9}, \: P_{naive}(B) = \frac{4}{9}, \: P_{naive}(A \cup B) = \frac{8}{9}, \:P_{naive}(A \cap B) = \frac{1}{9}.\]</span></p>
+<p>Para los complementos de los eventos recien considerados:</p>
+<p><span class="math display">\[ P_{naive}(A^c) = \frac{4}{9}, \: P_{naive}(B^c) = \frac{5}{9}, \: P_{naive}((A \cup B)^c) = \frac{1}{9}, \:P_{naive}((A \cap B)^c)] = \frac{8}{9}.\]</span>
+En general,</p>
+<p><span class="math display">\[P_{naive} (A^c)= \frac{|A^c|}{|S|}=\frac{|S|-|A|}{|S|} = 1-\frac{|A|}{|S|}=1-P_{naive}(A).\]</span>
+En la sección 1.6, veremos que este resultado sobre los complementos siempre es válido para la probabilidad, incluso cuando vamos más allá de la definición ingenua. Una buena estrategia cuando se trata de encontrar la probabilidad de un evento es comenzar pensando si será más fácil encontrar la probabilidad del evento o la probabilidad de su complemento. Las leyes de De Morgan son especialmente útiles en este contexto, ya que puede ser más fácil trabajar con una intersección que con una union, o viceversa.</p>
+<p>La definición ingenua es muy restrictiva porque requiere que S sea finito, con igual masa para cada guijarro. A menudo ha sido mal aplicado por personas que asumen resultados igualmente probables sin justificación y hacen argumentos en el sentido de que “sucederá o no, y no sabemos cuál, por lo que es 50-50”. Además de dar a veces probabilidades absurdas, este tipo de razonamiento ni siquiera es coherente internamente. Por ejemplo, diría que la probabilidad de vida en Marte es 1/2 (“o hay o no hay vida allí”), pero también diría que la probabilidad de vida inteligente en Marte es 1/2, y es claro intuitivamente —y por las propiedades de probabilidad desarrolladas en la sección 1.6— que la última debería tener una probabilidad estrictamente menor que la primera. Pero hay varios tipos importantes de problemas donde la definición ingenua es aplicable:</p>
+<ul>
+<li>cuando hay simetría en el problema que hace que los resultados sean igualmente probables. Es común suponer que una moneda tiene un 50% de probabilidad de caer Cara cuando se lanza, debido a la simetría física de la moneda<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. Para una baraja de cartas estándar bien barajada, es razonable suponer que todas las órdenes son iguales probable. No hay ciertas cartas demasiado ansiosas a las que les guste especialmente estar cerca de la parte superior de la baraja; cualquier lugar en particular en la baraja es igualmente probable que albergue cualquiera de las 52 cartas.</li>
+</ul>
+<ul>
+<li><p>cuando los resultados son igualmente probables por diseño. Por ejemplo, considere realizar una encuesta de n personas en una población de N personas. Un objetivo común es obtener una muestra aleatoria simple, lo que significa que las n personas se eligen al azar y que todos los subconjuntos de tamaño n son igualmente probables. Si tiene éxito, esto asegura que la definición ingenua sea aplicable, pero en la práctica esto puede ser difícil de lograr debido a varias complicaciones, como no tener una lista completa y precisa de información de contacto para todos los miembros de la población.</p></li>
+<li><p>cuando la definición ingenua sirve como un modelo nulo útil. En este contexto, asumimos que la definición ingenua se aplica solo para ver qué predicciones produciría, y luego podemos comparar los datos observados con los valores predichos para evaluar si la hipótesis de resultados igualmente probables es sostenible.</p></li>
+</ul>
+<hr />
+</div>
+<div id="como-contar" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> Como contar</h2>
+<p>Calcular la probabilidad ingenua de un evento A implica contar el número de guijarros en A y el número de pebbles en el espacio muestral S. A menudo, los conjuntos que necesitamos contar son extremadamente grandes. Esta sección presenta algunos métodos fundamentales para contar; se pueden encontrar más métodos en libros sobre combinatoria, la rama de las matemáticas que estudia el conteo.</p>
+<div id="regla-de-multiplicacion" class="section level3" number="1.4.1">
+<h3><span class="header-section-number">1.4.1</span> Regla de multiplicacion</h3>
+<p>En algunos problemas, podemos contar directamente el número de posibilidades usando un principio básico pero versátil llamado regla de multiplicación. Veremos que la regla de multiplicación conduce naturalmente a reglas de conteo para muestreo con reemplazo y muestreo sin reemplazo, dos escenarios que a menudo surgen en probabilidad y estadística.</p>
+<div class="theorem">
+<p><span id="thm:multRule" class="theorem"><strong>TEOREMA1.1  (Regla de multiplicacion) </strong></span>Considere un experimento compuesto que consta de dos sub-experimentos, Experimento A y Experimento B. Suponga que el Experimento A tiene <span class="math inline">\(a\)</span> posibles resultados, y para cada uno de esos resultados, el Experimento B tiene <span class="math inline">\(b\)</span> resultados posibles. Entonces, el experimento compuesto tiene ab posibles resultados.</p>
+</div>
+<p>Para ver por qué la regla de la multiplicación es verdadera, imagine un diagrama de árbol como en la Figura 1.2. Sea las ramas del árbol de <span class="math inline">\(a\)</span> formas de acuerdo con las posibilidades del Experimento A, y para cada una de esas ramas cree <span class="math inline">\(b\)</span> ramas para el Experimento B. En general, hay <span class="math inline">\(\underbrace{b+b+...+b} _{a}=ab\)</span> posibilidades.</p>
+<ol start="24" style="list-style-type: upper-alpha">
+<li>A menudo es más fácil pensar que los experimentos están en orden cronológico, pero no hay ningún requisito en la regla de multiplicación de que el Experimento A debe realizarse antes que el Experimento B.</li>
+</ol>
+<p>(ref: treeDiagram) Diagrama de árbol que ilustra la regla de multiplicación. Si el Experimento “A” tiene 3 resultados posibles, para cada uno de los cuales el Experimento “B” tiene 4 resultados posibles, entonces en general hay 3 · 4 = 12 resultados posibles.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
+<img src="images/1_2.png" alt="Diagrama de árbol que ilustra la regla de multiplicación. Si el Experimento &quot;A&quot; tiene 3 resultados posibles, para cada uno de los cuales el Experimento &quot;B&quot; tiene 4 resultados posibles, entonces en general hay 3 · 4 = 12 resultados posibles." width="50%" />
+<p class="caption">
+FIGURA 1.2: Diagrama de árbol que ilustra la regla de multiplicación. Si el Experimento “A” tiene 3 resultados posibles, para cada uno de los cuales el Experimento “B” tiene 4 resultados posibles, entonces en general hay 3 · 4 = 12 resultados posibles.
+</p>
+</div>
+<div class="example">
+<p><span id="exm:runners" class="example"><strong>EJEMPLO 1.3  (Corredores) </strong></span>Suponga que 10 personas están participando en una carrera. Suponga que los empates no son posibles y que los 10 completarán la carrera, por lo que habrá ganadores del primer, segundo y tercer lugar bien definidos. ¿Cuántas posibilidades hay para los ganadores del primer, segundo y tercer lugar?</p>
+</div>
+<p><span class="math inline">\(Solución\)</span>: Hay 10 posibilidades para quién obtiene el primer lugar, luego, una vez que se arregla, hay 9 posibilidades para quién obtiene el segundo lugar, y una vez que ambos se arreglan hay 8 posibilidades para el tercer puesto. Entonces, según la regla de la multiplicación, hay 10 · 9 · 8 = 720 posibilidades.</p>
 
 </div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Ver Diaconis, Holmes y Montgomery [7] para un argumento físico de que la probabilidad de que una moneda lanzada salga en la forma en que comenzó es de aproximadamente 0.51 (cerca de pero un poco más de 1/2), y Gelman y Nolan [11] para una explicación de por qué la probabilidad de que salga cara es cercana a 1/2 incluso para una moneda que se fabrica para tener diferentes pesos en los dos lados (para el lanzamiento de una moneda estándar; permitir que la moneda gire es un asunto diferente).<a href="probabilidad-y-conteo.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 

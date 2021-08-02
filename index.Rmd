@@ -1,6 +1,11 @@
 --- 
 title: "Introduccion a Probabilidades"
-author: "Joseph K. Blitzstein (Autor), Jessica Hwang (Autor), Gonzalo Meza (Traduccion)"
+author: 
+- Joseph K. Blitzstein (Autor) 
+- Jessica Hwang (Autor)
+
+- Gonzalo Meza (Traduccion no autorizado)
+
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---

@@ -14,7 +14,7 @@ language:
     prp: 'Proposition '
     cnj: 'Conjecture '
     def: 'DEFINICIÓN '
-    exm: 'Example '
+    exm: 'EJEMPLO '
     exr: 'Exercise '
     hyp: 'Hypothesis '
     proof: 'Proof. '

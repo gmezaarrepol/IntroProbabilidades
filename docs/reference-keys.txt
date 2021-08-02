@@ -1,6 +1,16 @@
-def:pyth
+def:espacioM
+fig:unnamed-chunk-1
+exm:coin
+exm:card
+def:naiveProb
+thm:multRule
+fig:unnamed-chunk-2
+exm:runners
 probabilidad-y-conteo
 por-qué-estudiar-probabilidad
 espacios-de-muestra-y-pebble-world
+definición-ingenua-de-probabilidad
+como-contar
+regla-de-multiplicacion
 the-pool-of-tears
 a-caucus-race-and-a-long-tale

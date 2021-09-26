@@ -26,7 +26,7 @@
 <meta name="author" content="Gonzalo Meza (Traduccion no autorizado)" />
 
 
-<meta name="date" content="2021-08-01" />
+<meta name="date" content="2021-09-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -34,7 +34,7 @@
   
   
 <link rel="prev" href="index.html"/>
-<link rel="next" href="the-pool-of-tears.html"/>
+<link rel="next" href="probabilidad-condicional.html"/>
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -86,8 +86,8 @@
 <li class="chapter" data-level="1.4.1" data-path="probabilidad-y-conteo.html"><a href="probabilidad-y-conteo.html#regla-de-multiplicacion"><i class="fa fa-check"></i><b>1.4.1</b> Regla de multiplicacion</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="the-pool-of-tears.html"><a href="the-pool-of-tears.html"><i class="fa fa-check"></i><b>2</b> The pool of tears</a></li>
-<li class="chapter" data-level="3" data-path="a-caucus-race-and-a-long-tale.html"><a href="a-caucus-race-and-a-long-tale.html"><i class="fa fa-check"></i><b>3</b> A caucus-race and a long tale</a></li>
+<li class="chapter" data-level="2" data-path="probabilidad-condicional.html"><a href="probabilidad-condicional.html"><i class="fa fa-check"></i><b>2</b> Probabilidad Condicional</a></li>
+<li class="chapter" data-level="3" data-path="variables-aleatorias-y-sus-distribuciones.html"><a href="variables-aleatorias-y-sus-distribuciones.html"><i class="fa fa-check"></i><b>3</b> Variables aleatorias y sus distribuciones</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -319,11 +319,10 @@ En la sección 1.6, veremos que este resultado sobre los complementos siempre es
 </div>
 <p>Para ver por qué la regla de la multiplicación es verdadera, imagine un diagrama de árbol como en la Figura 1.2. Sea las ramas del árbol de <span class="math inline">\(a\)</span> formas de acuerdo con las posibilidades del Experimento A, y para cada una de esas ramas cree <span class="math inline">\(b\)</span> ramas para el Experimento B. En general, hay <span class="math inline">\(\underbrace{b+b+...+b} _{a}=ab\)</span> posibilidades.</p>
 <ol start="24" style="list-style-type: upper-alpha">
-<li>A menudo es más fácil pensar que los experimentos están en orden cronológico, pero no hay ningún requisito en la regla de multiplicación de que el Experimento A debe realizarse antes que el Experimento B.</li>
+<li><strong>1.4.2</strong> A menudo es más fácil pensar que los experimentos están en orden cronológico, pero no hay ningún requisito en la regla de multiplicación de que el Experimento A debe realizarse antes que el Experimento B.</li>
 </ol>
-<p>(ref: treeDiagram) Diagrama de árbol que ilustra la regla de multiplicación. Si el Experimento “A” tiene 3 resultados posibles, para cada uno de los cuales el Experimento “B” tiene 4 resultados posibles, entonces en general hay 3 · 4 = 12 resultados posibles.</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
-<img src="images/1_2.png" alt="Diagrama de árbol que ilustra la regla de multiplicación. Si el Experimento &quot;A&quot; tiene 3 resultados posibles, para cada uno de los cuales el Experimento &quot;B&quot; tiene 4 resultados posibles, entonces en general hay 3 · 4 = 12 resultados posibles." width="50%" />
+<img src="images/1_2.png" alt="Diagrama de árbol que ilustra la regla de multiplicación. Si el Experimento &quot;A&quot; tiene 3 resultados posibles, para cada uno de los cuales el Experimento &quot;B&quot; tiene 4 resultados posibles, entonces en general hay 3 · 4 = 12 resultados posibles." width="30%" />
 <p class="caption">
 FIGURA 1.2: Diagrama de árbol que ilustra la regla de multiplicación. Si el Experimento “A” tiene 3 resultados posibles, para cada uno de los cuales el Experimento “B” tiene 4 resultados posibles, entonces en general hay 3 · 4 = 12 resultados posibles.
 </p>
@@ -331,7 +330,54 @@ FIGURA 1.2: Diagrama de árbol que ilustra la regla de multiplicación. Si el Ex
 <div class="example">
 <p><span id="exm:runners" class="example"><strong>EJEMPLO 1.3  (Corredores) </strong></span>Suponga que 10 personas están participando en una carrera. Suponga que los empates no son posibles y que los 10 completarán la carrera, por lo que habrá ganadores del primer, segundo y tercer lugar bien definidos. ¿Cuántas posibilidades hay para los ganadores del primer, segundo y tercer lugar?</p>
 </div>
-<p><span class="math inline">\(Solución\)</span>: Hay 10 posibilidades para quién obtiene el primer lugar, luego, una vez que se arregla, hay 9 posibilidades para quién obtiene el segundo lugar, y una vez que ambos se arreglan hay 8 posibilidades para el tercer puesto. Entonces, según la regla de la multiplicación, hay 10 · 9 · 8 = 720 posibilidades.</p>
+<p><span class="math inline">\(Solución\)</span>: Hay 10 posibilidades para quién obtiene el primer lugar, luego, una vez que se arregla, hay 9 posibilidades para quién obtiene el segundo lugar, y una vez que ambos se arreglan hay 8 posibilidades para el tercer puesto. Entonces, según la regla de la multiplicación, hay 10 x 9 x 8 = 720 posibilidades.</p>
+<p>No tuvimos que considerar primero al ganador del primer lugar. También podríamos haber dicho que hay 10 posibilidades para quién obtuvo el tercer lugar, luego, una vez que eso se arregla, hay 9 posibilidades para el segundo lugar, y una vez que ambos se arreglan, hay 8 posibilidades para el primer lugar; o imagina que hay 3 plataformas, en las que los corredores del primer, segundo y tercer lugar se pararán después de la carrera. Las plataformas son de oro, plata y bronce, asignadas al primer, segundo y tercer lugar, respectivamente. Nuevamente, hay 10 x 9 x 8 = 720 posibilidades de cómo se ocuparán las plataformas después de la carrera, y no hay razón para que las plataformas deban considerarse en el orden (oro, plata, bronce).</p>
+<div class="example">
+<p><span id="exm:ajedrez" class="example"><strong>EJEMPLO 1.4  (Tablero de ajedrez) </strong></span>¿Cuántos cuadrados hay en un tablero de ajedrez de 8 × 8, como en la Figura 1.3? Incluso el nombre “tablero de ajedrez 8 × 8” lo hace fácil: hay 8 x 8 = 64 casillas en el tablero. La estructura de la cuadrícula lo deja claro, pero también podemos pensar en esto como un ejemplo de la regla de multiplicación: para especificar un cuadrado, podemos especificar en qué fila y en qué columna está. Hay 8 opciones de fila, para cada una de las cuales hay 8 opciones de columna.</p>
+</div>
+<p>Además, podemos ver sin hacer ningún cálculo que la mitad de los cuadrados son blancos y la otra mitad negros. Imagina girar el tablero de ajedrez 90 grados en el sentido de las agujas del reloj. Entonces, todas las posiciones que tenían un cuadrado blanco ahora contienen un cuadrado negro, y viceversa, por lo que el número de cuadrados blancos debe ser igual al número de cuadrados negros. También podemos contar el número de cuadrados blancos usando la regla de la multiplicación: en cada una de las 8 filas hay 4 cuadrados blancos, dando un total de 8 · 4 = 32 cuadrados blancos.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
+<img src="images/1_3.png" alt="Un tablero de ajedrez de 8 × 8 (izquierda) y una cuadrícula de crucigramas (derecha). El tablero de ajedrez tiene 8 x 8 = 64 cuadrados, mientras que contar el número de cuadrados blancos en la cuadrícula del crucigrama requiere más trabajo." width="50%" />
+<p class="caption">
+FIGURA 1.3: Un tablero de ajedrez de 8 × 8 (izquierda) y una cuadrícula de crucigramas (derecha). El tablero de ajedrez tiene 8 x 8 = 64 cuadrados, mientras que contar el número de cuadrados blancos en la cuadrícula del crucigrama requiere más trabajo.
+</p>
+</div>
+<p>En contraste, requeriría más esfuerzo contar el número de cuadrados blancos en la cuadrícula del crucigrama que se muestra en la Figura 1.3. La regla de la multiplicación no se aplica, ya que diferentes filas a veces tienen diferentes números de cuadrados blancos.</p>
+<p>::: {.example #conos name="Conos de helado}
+Suponga que está comprando un cono de helado. Puede elegir si desea tener un cono de cake o un cono de waffle, y si desea tener chocolate, vainilla o fresa como sabor. Este proceso de decisión se puede visualizar con un diagrama de árbol, como en la Figura 1.4.
+:::</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
+<img src="images/1_4.png" alt="Diagrama de árbol para elegir un cono de helado. Independientemente de si se elige primero el tipo de cono o el sabor, hay 2 · 3 = 3 · 2 = 6 posibilidades." width="60%" />
+<p class="caption">
+FIGURA 1.4: Diagrama de árbol para elegir un cono de helado. Independientemente de si se elige primero el tipo de cono o el sabor, hay 2 · 3 = 3 · 2 = 6 posibilidades.
+</p>
+</div>
+<p>Según la regla de la multiplicación, hay 2 · 3 = 6 posibilidades. Este es un ejemplo muy simple, pero vale la pena pensarlo en detalle como base para pensar y visualizar ejemplos más complicados. Pronto encontraremos ejemplos en los que dibujar el árbol en un tamaño legible ocuparía más espacio del que existe en el universo conocido, pero donde conceptualmente todavía podemos pensar en términos del ejemplo del helado. Algunas cosas a tener en cuenta:</p>
+<ol style="list-style-type: decimal">
+<li><p>No importa si eliges primero el tipo de cono (“Me gustaría un cono de waffle con helado de chocolate”) o el sabor primero (“Me gustaría helado de chocolate en un cono de waffle”). De cualquier manera, hay 2 · 3 = 3 · 2 = 6 posibilidades.</p></li>
+<li><p>No importa si los mismos sabores están disponibles en un cono de cake que en un cono de waffle. Lo que importa es que hay exactamente 3 opciones de sabor para cada opción de cono. Si por alguna extraña razón estuviera prohibido tener helado de chocolate en un cono de waffle, sin ningún sabor sustituto disponible (aparte de vainilla y fresa), habría 3 + 2 = 5 posibilidades y la regla de la multiplicación no se aplicaría. En ejemplos más amplios, tales complicaciones podrían hacer que contar el número de posibilidades sea mucho más difícil.</p></li>
+</ol>
+<p>Ahora suponga que compra <span class="math inline">\(dos\)</span> conos de helado en un día determinado, uno por la tarde y otro por la noche. Escriba, por ejemplo, (cakeC, waffleV) para referirse a un cono de cake con chocolate por la tarde, seguido de un cono de waffle con vainilla por la noche. Según la regla de la multiplicación, hay <span class="math inline">\(6^2 = 36\)</span> posibilidades en tu delicioso experimento compuesto.</p>
+<p>Pero, ¿qué pasa si solo te interesa el tipo de conos de helado que comiste ese día, no el orden en el que los comiste, por lo que no quieres distinguir, por ejemplo, entre (cakeC, waffleV) y (waffleV , cakeC)? ¿Hay ahora 36/2 = 18 posibilidades? No, dado que las posibilidades como (cakeC, cakeC) ya se enumeraron solo una vez cada una. Hay 6 · 5 = 30 posibilidades ordenadas <span class="math inline">\((x, y)\)</span> con <span class="math inline">\(x \neq y\)</span>, que se convierten en 15 posibilidades si tratamos <span class="math inline">\((x, y)\)</span> como equivalente a <span class="math inline">\((y, x)\)</span>, más 6 posibilidades de la forma <span class="math inline">\((x , x)\)</span>, dando un total de 21 posibilidades. Tenga en cuenta que si los 36 pares ordenados originales <span class="math inline">\((x, y)\)</span> son igualmente probables, entonces las 21 posibilidades aquí <span class="math inline">\(no\)</span> son igualmente probables.</p>
+<div class="example">
+<p><span id="exm:subset" class="example"><strong>EJEMPLO 1.5  (Subconjuntos) </strong></span>Un conjunto con n elementos tiene <span class="math inline">\(2^n\)</span> subconjuntos, incluido el conjunto vacío <span class="math inline">\(∅\)</span> y el conjunto en sí. Esto se sigue de la regla de la multiplicación, ya que para cada elemento, podemos elegir si incluirlo o excluirlo. Por ejemplo, el conjunto {1,2,3} tiene los 8 subconjuntos <span class="math inline">\(∅\)</span>, {1}, {2}, {3}, {1, 2}, {1, 3}, {2, 3}, {1, 2, 3} (<span class="math inline">\(2^3 = 8\)</span>). Este resultado explica por qué en el ejemplo 1.2.3 hay <span class="math inline">\(2^{52}\)</span> eventos que se pueden definir.</p>
+</div>
+<p>Podemos usar la regla de la multiplicación para llegar a fórmulas de muestreo con y sin reemplazo. Muchos experimentos de probabilidad y estadística pueden interpretarse en uno de estos dos contextos, por lo que resulta atractivo que ambas fórmulas se sigan directamente del mismo principio básico de conteo.</p>
+<p>::: {.theorem #samplingReplace name = “Muestreo con reemplazo”}
+Considere n objetos y haga k elecciones a partir de ellos, uno a la vez con reemplazo (es decir, elegir un determinado objeto no impide que sea elegido nuevamente). Entonces hay <span class="math inline">\(n^k\)</span> posibles resultados (donde el orden importa, en el sentido de que, por ejemplo, elegir el objeto 3 y luego el objeto 7 se cuenta como un resultado diferente que elegir el objeto 7 y luego el objeto 3).
+:::</p>
+<p>Por ejemplo, imagina un frasco con <span class="math inline">\(n\)</span> bolas, etiquetadas de 1 a <span class="math inline">\(n\)</span>. Tomamos muestras de las bolas de una en una con reemplazo, lo que significa que cada vez que se elige una bola, se devuelve al frasco. Cada bola muestreada es un sub-experimento con <span class="math inline">\(n\)</span> posibles resultados y hay <span class="math inline">\(k\)</span> sub-experimentos. Por tanto, mediante la regla de la multiplicación hay <span class="math inline">\(n^k\)</span> formas de obtener una muestra de tamaño <span class="math inline">\(k\)</span>.</p>
+<p>::: {.theorem #samplingNoReplace name = “Muestreo sin reemplazo”}
+Considere <span class="math inline">\(n\)</span> objetos y haga <span class="math inline">\(k\)</span> elecciones a partir de ellos, uno a la vez sin reemplazo (es decir, elegir un objeto determinado impide que se vuelva a elegir). Entonces hay <span class="math inline">\(n (n - 1) · · · (n - k + 1)\)</span> resultados posibles para <span class="math inline">\(1 ≤ k ≤ n\)</span>, y 0 posibilidades para <span class="math inline">\(k&gt; n\)</span> (donde el orden importa). Por convención, <span class="math inline">\(n (n - 1) · · · (n - k + 1) = n \:para \:k = 1\)</span>.
+:::</p>
+<p>Este resultado también se deriva directamente de la regla de la multiplicación: cada bola muestreada es nuevamente un sub-experimento, y el número de resultados posibles disminuye en 1 cada vez. Tenga en cuenta que para muestrear <span class="math inline">\(k\)</span> de <span class="math inline">\(n\)</span> objetos sin reemplazo, necesitamos <span class="math inline">\(k ≤ n\)</span>, mientras que en el muestreo con reemplazo los objetos son inagotables.</p>
+<div class="example">
+<p><span id="exm:permutationFact" class="example"><strong>EJEMPLO 1.6  (Permutaciones y factoriales ) </strong></span>Una permutacion de <span class="math inline">\(1,2,...,n\)</span> es un arreglo o disposicion de ellos en algun orden, ejemplo: <span class="math inline">\(3, 5, 1, 2, 4\)</span> es una permutacion de <span class="math inline">\(1, 2, 3, 4, 5\)</span>. Por el teorema 1.4.8 con <span class="math inline">\(k=n\)</span>, hay <span class="math inline">\(n!\)</span> permutaciones de <span class="math inline">\(1,2,...,n\)</span>. Por ejemplo, hay <span class="math inline">\(n!\)</span> formas en que <span class="math inline">\(n\)</span> personas pueden hacer fila para comprar helado. (Recuerde que <span class="math inline">\(n!\)</span> es <span class="math inline">\(n(n-1)(n-2)...1\)</span> para cualquier entero positivo <span class="math inline">\(n\)</span>, y <span class="math inline">\(0! = 1\)</span>.)</p>
+</div>
+<p>Los teoremas 1.4.7 y 1.4.8 son teoremas sobre contar, pero cuando se aplica la definición ingenua, podemos usarlos para calcular probabilidades. Esto nos lleva a nuestro siguiente ejemplo, un famoso problema de probabilidad llamado problema de cumpleaños. La solución incorpora tanto muestreo con reemplazo como muestreo sin reemplazo.</p>
+<div class="example">
+<p><span id="exm:birthdayProblem" class="example"><strong>EJEMPLO 1.7  (Problema de cumpleaños ) </strong></span>Hay k personas en una habitación. Suponga que es igualmente probable que el cumpleaños de cada persona sea cualquiera de los 365 días del año (excluimos el 29 de febrero) y que los cumpleaños de las personas son independientes (definiremos la independencia formalmente más adelante, pero intuitivamente significa que conocer los cumpleaños de algunas personas da no tenemos información sobre los cumpleaños de otras personas; esto no sería válido si, por ejemplo, supiéramos que dos de las personas eran gemelos). ¿Cuál es la probabilidad de que al menos un par de personas del grupo tengan el mismo cumpleaños?.</p>
+</div>
 
 </div>
 </div>
@@ -348,7 +394,7 @@ FIGURA 1.2: Diagrama de árbol que ilustra la regla de multiplicación. Si el Ex
         </div>
       </div>
 <a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="the-pool-of-tears.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="probabilidad-condicional.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
